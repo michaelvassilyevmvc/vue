@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <input v-model="message">
         <input v-bind:value="message" v-on:input="message = $event.target.value">
-{{ message }}
+        {{ message }}
+        <div>
+            <input v-model="loginForm.username">
+            <input v-model="loginForm.password">
+            <button v-on:click="submitForm">Submit Form</button>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var app = new Vue({
-            el:'#app',
-            data:{
-                message:"Hello World"
+            el: '#app',
+            data: {
+                message: "Hello World",
+                loginForm:{
+                    username:'',
+                    password:''
+                }
+            },
+            methods:{
+                submitForm(){
+                    console.log("Submitting logging form",this.loginForm);
+
+                    var callLog = () => {
+                        this.log("something");
+                    };
+
+                    callLog();
+                },
+                log(v){
+                    console.log(v);
+                }
             }
         })
     </script>
 </body>
+
 </html>
