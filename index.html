@@ -8,6 +8,8 @@
 </head>
 <body>
     <div id="app">
+        <input v-model="message">
+        <input v-bind:value="message" v-on:input="message = $event.target.value">
 {{ message }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
