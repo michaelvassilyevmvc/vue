@@ -1,6 +1,6 @@
-var app = new Vue({
-    data: {
-        
+var app = Vue.createApp({
+    data(){
+        return {};
     },
     methods:{
         
